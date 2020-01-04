@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Zero-Waste-Cookbook-Kotlin</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="nav_host_fragment">nav_host_fragment</string>
+    <string name="recipe_of_the_day">Recipe of the day</string>
+    <string name="newest_recipes">Newest recipes</string>
+</resources>
