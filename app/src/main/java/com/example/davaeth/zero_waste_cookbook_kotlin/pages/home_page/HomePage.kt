@@ -10,14 +10,15 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.davaeth.zero_waste_cookbook_kotlin.R
-import com.example.davaeth.zero_waste_cookbook_kotlin.pages.home_page.components.adapters.NewestRecipesAdapter
 import com.example.davaeth.zero_waste_cookbook_kotlin.utils.adapters.RecipeCardTagsAdapter
+import com.example.davaeth.zero_waste_cookbook_kotlin.utils.adapters.RecipesListAdapter
 import kotlinx.android.synthetic.main.fragment_home_page.*
 import kotlinx.android.synthetic.main.recipe_card.view.*
 
-class HomePage : Fragment(), View.OnClickListener {
+class HomePage : Fragment() {
 
     private lateinit var navController: NavController
+    private val list = mutableListOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,13 +34,8 @@ class HomePage : Fragment(), View.OnClickListener {
         initAdapters(view)
     }
 
-    override fun onClick(v: View?) {
-
-    }
 
     private fun initAdapters(view: View) {
-        val list = mutableListOf<String>()
-
         list.add("elo")
         list.add("elo2")
         list.add("elo4")
@@ -47,10 +43,23 @@ class HomePage : Fragment(), View.OnClickListener {
 
         recipe_card.tag_list.adapter = RecipeCardTagsAdapter(view.context, list)
 
+        newest_recipes.layoutManager =
+            LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
+        newest_recipes.adapter =
+            RecipesListAdapter(
+                list
+            )
         newest_recipes.setHasFixedSize(true)
-        newest_recipes.layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
-        newest_recipes.adapter = NewestRecipesAdapter(list)
-        newest_recipes.visibility = View.VISIBLE
+
+        bottom_nav_bar.setOnNavigationItemSelectedListener{ item ->
+            when(item.itemId) {
+                R.id.action_profile -> {
+                    navController.navigate(R.id.action_homePage_to_profilePage)
+                }
+                else -> {}
+            }
+            return@setOnNavigationItemSelectedListener true
+        }
     }
 
 }

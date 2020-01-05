@@ -9,5 +9,17 @@
         android:id="@+id/homePage"
         android:name="com.example.davaeth.zero_waste_cookbook_kotlin.pages.home_page.HomePage"
         android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" />
+        tools:layout="@layout/fragment_home_page">
+
+        <action
+            android:id="@+id/action_homePage_to_profilePage"
+            app:destination="@id/profilePage" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profilePage"
+        android:name="com.example.davaeth.zero_waste_cookbook_kotlin.pages.profile_page.ProfilePage"
+        android:label="fragment_profile_page"
+        tools:layout="@layout/fragment_profile_page" />
 </navigation>
