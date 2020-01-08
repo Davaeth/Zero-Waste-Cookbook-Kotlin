@@ -3,23 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homePage">
+    app:startDestination="@+id/singleRecipePage">
 
     <fragment
         android:id="@+id/homePage"
-        android:name="com.example.davaeth.zero_waste_cookbook_kotlin.pages.home_page.HomePage"
+        android:name="com.example.davaeth.zero_waste_cookbook_kotlin.ui.home_page.HomePage"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page">
-
         <action
-            android:id="@+id/action_homePage_to_profilePage"
-            app:destination="@id/profilePage" />
-
+            android:id="@+id/action_homePage_to_singleRecipePage"
+            app:destination="@id/singleRecipePage" />
     </fragment>
 
     <fragment
         android:id="@+id/profilePage"
-        android:name="com.example.davaeth.zero_waste_cookbook_kotlin.pages.profile_page.ProfilePage"
+        android:name="com.example.davaeth.zero_waste_cookbook_kotlin.ui.profile_page.ProfilePage"
         android:label="fragment_profile_page"
-        tools:layout="@layout/fragment_profile_page" />
+        tools:layout="@layout/fragment_profile_page">
+        <action
+            android:id="@+id/action_profilePage_to_singleRecipePage"
+            app:destination="@id/singleRecipePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchPage"
+        android:name="com.example.davaeth.zero_waste_cookbook_kotlin.ui.search_page.SearchPage"
+        android:label="fragment_search_page"
+        tools:layout="@layout/fragment_search_page">
+        <action
+            android:id="@+id/action_searchPage_to_singleRecipePage"
+            app:destination="@id/singleRecipePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleRecipePage"
+        android:name="com.example.davaeth.zero_waste_cookbook_kotlin.ui.single_recipe_page.SingleRecipePage"
+        android:label="fragment_single_recipe_page"
+        tools:layout="@layout/fragment_single_recipe_page" />
 </navigation>

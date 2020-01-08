@@ -3,18 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_home"
-        android:enabled="true"
+        android:id="@+id/homePage"
+        android:title="@string/home_page_title"
         android:icon="@drawable/ic_access_time_black_24dp"
+        android:orderInCategory="1"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_search"
-        android:icon="@drawable/ic_access_time_black_24dp"
+        android:id="@+id/searchPage"
+        android:title="@string/search_page_title"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:orderInCategory="2"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_profile"
-        android:icon="@drawable/ic_access_time_black_24dp"
+        android:id="@+id/profilePage"
+        android:title="@string/profile_page_title"
+        android:icon="@drawable/ic_kitchen_black_24dp"
+        android:orderInCategory="2"
         app:showAsAction="always" />
+
 </menu>

@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home_page.HomePage">
+    android:background="@color/backgroundColor"
+    tools:context=".ui.single_recipe_page.SingleRecipePage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/backgroundColor">
+        android:layout_height="match_parent">
 
         <include
-            android:id="@+id/recipe_card"
-            layout="@layout/recipe_card"
+            android:id="@+id/recipe_card_include"
+            layout="@layout/single_recipe_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -21,48 +21,46 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.067" />
-
-        <TextView
-            android:id="@+id/recipe_of_the_day"
-            android:layout_width="192dp"
-            android:layout_height="36dp"
-            android:text="@string/recipe_of_the_day"
-            android:textColor="@color/textColor"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/newest_recipes_text"
-            android:layout_width="192dp"
-            android:layout_height="36dp"
-            android:text="@string/newest_recipes"
-            android:textColor="@color/textColor"
-            android:textSize="24sp"
+        <ExpandableListView
+            android:id="@+id/single_recipe_expandables"
+            android:layout_width="0dp"
+            android:layout_height="290dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.371" />
+            app:layout_constraintVertical_bias="0.583" />
+
+        <Button
+            android:id="@+id/add_review_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/iconColor"
+            android:drawableEnd="@drawable/ic_add_black_24dp"
+            android:text="Add review"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/secondaryColor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.801" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/newest_recipes"
+            android:id="@+id/reviews"
             android:layout_width="0dp"
-            android:layout_height="422dp"
-            android:overScrollMode="never"
-            android:scrollbars="none"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/add_review_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

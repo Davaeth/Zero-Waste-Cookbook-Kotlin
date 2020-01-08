@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.profile_page.ProfilePage">
+    android:background="@color/backgroundColor"
+    tools:context=".ui.profile_page.ProfilePage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,32 +28,35 @@
             android:id="@+id/avatar"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_launcher_background"
+            android:contentDescription="Account avatar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.095" />
+            app:layout_constraintVertical_bias="0.095"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
             android:id="@+id/username"
             android:layout_width="0dp"
             android:layout_height="35dp"
+            android:text="Username"
             android:textAlignment="center"
+            android:textColor="@color/textColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.525"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.242"
-            tools:text="Username" />
+            app:layout_constraintVertical_bias="0.242" />
 
         <TextView
             android:id="@+id/favourite_recipes_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/favourite_recipes"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +76,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/add_new_recipe_button"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_by_name_shape"
+            android:textColor="@color/secondaryColor"
+            android:textSize="18sp"
+            app:backgroundTint="@color/iconColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.297"
+            tools:text="Add new recipe" />
+
+        <Button
+            android:id="@+id/manage_recipes_button"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_search_shape"
+            android:textColor="@color/secondaryColor"
+            android:textSize="18sp"
+            app:backgroundTint="@color/iconColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.933"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.297"
+            tools:text="Edit my recipes" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

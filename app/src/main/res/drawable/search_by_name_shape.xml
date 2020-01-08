@@ -8,10 +8,10 @@
         android:topLeftRadius="50dp"
         android:topRightRadius="50dp" />
 
-    <solid
+    <stroke
         android:width="2dp"
-        android:color="@color/iconColor" />
+        android:color="@android:color/darker_gray" />
 
-
+    <size android:width="150dp" android:height="25dp"/>
 
 </shape>

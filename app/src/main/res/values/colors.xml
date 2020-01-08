@@ -7,4 +7,8 @@
     <color name="secondaryColor">#1E2629</color>
     <color name="iconColor">#ee801e</color>
     <color name="textColor">#FFFAFA</color>
+    <color name="disabledColor">#D7D7D7</color>
+
+    <!--  Single Recipe colors  -->
+    <color name="usernameColor">#FF7497A2</color>
 </resources>
