@@ -10,7 +10,10 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.davaeth.zero_waste_cookbook_kotlin.R
 import com.example.davaeth.zero_waste_cookbook_kotlin.ui.single_recipe_page.components.adapters.RecipeExpandableAdapter
+import com.example.davaeth.zero_waste_cookbook_kotlin.ui.single_recipe_page.components.add_review_dialog.AddReviewDialog
+import com.example.davaeth.zero_waste_cookbook_kotlin.utils.adapters.RecipeCardTagsAdapter
 import kotlinx.android.synthetic.main.fragment_single_recipe_page.*
+import kotlinx.android.synthetic.main.recipe_card.view.*
 
 
 class SingleRecipePage : Fragment() {
@@ -49,6 +52,14 @@ class SingleRecipePage : Fragment() {
                 data
             )
         )
+
+        recipe_card_include.tag_list.adapter = RecipeCardTagsAdapter(view.context, ingredients)
+
+        add_review_button.setOnClickListener(View.OnClickListener {
+            val addReviewDialog = AddReviewDialog(view.context)
+
+            addReviewDialog.showDialog()
+        })
 
 //        recipe_description.setOnGroupExpandListener(this)
 //        recipe_description.setOnGroupExpandListener(this)

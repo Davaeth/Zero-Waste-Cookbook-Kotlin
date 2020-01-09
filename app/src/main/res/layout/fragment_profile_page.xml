@@ -13,13 +13,13 @@
 
         <ImageButton
             android:id="@+id/settings_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/ic_menu_close_clear_cancel"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_settings_black_24dp"
+            android:backgroundTint="@color/textColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.957"
+            app:layout_constraintHorizontal_bias="0.96"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.022" />
@@ -56,6 +56,7 @@
             android:id="@+id/favourite_recipes_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Favourite Recipes"
             android:textColor="@color/textColor"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/favourite_recipes"
@@ -63,8 +64,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:text="Favourite Recipes" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/favourite_recipes"
@@ -82,6 +82,7 @@
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:background="@drawable/search_by_name_shape"
+            android:text="Add new recipe"
             android:textColor="@color/secondaryColor"
             android:textSize="18sp"
             app:backgroundTint="@color/iconColor"
@@ -90,14 +91,14 @@
             app:layout_constraintHorizontal_bias="0.066"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.297"
-            tools:text="Add new recipe" />
+            app:layout_constraintVertical_bias="0.297" />
 
         <Button
             android:id="@+id/manage_recipes_button"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_search_shape"
+            android:background="@drawable/search_by_name_shape"
+            android:text="Edit my recipes"
             android:textColor="@color/secondaryColor"
             android:textSize="18sp"
             app:backgroundTint="@color/iconColor"
@@ -106,8 +107,7 @@
             app:layout_constraintHorizontal_bias="0.933"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.297"
-            tools:text="Edit my recipes" />
+            app:layout_constraintVertical_bias="0.297" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

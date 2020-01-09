@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondaryColor"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/close_review_close_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:tint="@color/textColor"
+            app:layout_constraintBottom_toTopOf="@+id/add_revive_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.957"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_close_black_24dp" />
+
+        <TextView
+            android:id="@+id/add_revive_text"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:text="Add review"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/ratings"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.822" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ratings"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:foregroundGravity="center"
+            android:orientation="horizontal"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@+id/review_description_edit_field"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.813" />
+
+        <EditText
+            android:id="@+id/review_description_edit_field"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/new_review_submit_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.874" />
+
+        <Button
+            android:id="@+id/new_review_submit_button"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_add_review"
+            android:backgroundTint="@color/iconColor"
+            android:text="POTWIERDŹ"
+            android:textColor="@color/secondaryColor"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.303" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
