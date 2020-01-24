@@ -13,6 +13,7 @@ import androidx.room.PrimaryKey
     )]
 )
 data class User(
-    @PrimaryKey val id: Int, val username: String,
+    @PrimaryKey val id: Int,
+    val username: String,
     val role: Int
 )
