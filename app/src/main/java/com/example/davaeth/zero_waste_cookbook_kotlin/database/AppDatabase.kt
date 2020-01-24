@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.dao.ReviewDao
-import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.Review
+import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.administration.Review
 
 @Database(
     entities = [Review::class],
@@ -13,18 +13,14 @@ import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.Review
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun ReviewDao(): ReviewDao
+    abstract fun reviewDao(): ReviewDao
 
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        fun getDatabase(context: Context): AppDatabase {
-            if (INSTANCE != null) {
-                return INSTANCE as AppDatabase
-            }
-
-            synchronized(this) {
+        fun getDatabase(context: Context): AppDatabase =
+            INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
@@ -35,6 +31,5 @@ abstract class AppDatabase : RoomDatabase() {
 
                 return instance
             }
-        }
     }
 }
