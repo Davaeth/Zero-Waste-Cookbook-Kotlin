@@ -6,24 +6,25 @@ import androidx.room.PrimaryKey
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.administration.User
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.food_addons.DifficultyLevel
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.food_addons.Region
+import java.sql.Date
 
 @Entity(
     tableName = "recipes",
     foreignKeys = [
         ForeignKey(
+            parentColumns = ["id"],
             entity = User::class,
-            parentColumns = ["id"],
-            childColumns = ["user"]
+            childColumns = ["ownerId"]
         ),
         ForeignKey(
+            parentColumns = ["id"],
             entity = DifficultyLevel::class,
-            parentColumns = ["id"],
-            childColumns = ["difficultyLevel"]
+            childColumns = ["difficultyLevelId"]
         ),
         ForeignKey(
-            entity = Region::class,
             parentColumns = ["id"],
-            childColumns = ["region"]
+            entity = Region::class,
+            childColumns = ["regionId"]
         )
     ]
 )
@@ -33,6 +34,7 @@ data class Recipe(
     val description: String,
     val photoPath: String,
     val rank: Double,
+    val creationDate: Date,
     val ownerId: Int,
     val difficultyLevelId: Int,
     val regionId: Int

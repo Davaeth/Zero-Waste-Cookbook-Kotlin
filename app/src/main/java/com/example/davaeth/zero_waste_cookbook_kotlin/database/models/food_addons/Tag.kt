@@ -7,10 +7,16 @@ import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.food.Recip
 
 @Entity(
     tableName = "tags",
-    foreignKeys = [ForeignKey(
-        entity = Recipe::class,
-        parentColumns = ["id"],
-        childColumns = ["recipe"]
-    )]
+    foreignKeys = [
+        ForeignKey(
+            parentColumns = ["id"],
+            entity = Recipe::class,
+            childColumns = ["recipe"]
+        )
+    ]
 )
-data class Tag(@PrimaryKey val id: Int, val name: String, val recipe: Int)
+data class Tag(
+    @PrimaryKey val id: Int,
+    val name: String,
+    val recipe: Int
+)

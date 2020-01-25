@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.davaeth.zero_waste_cookbook_kotlin.database.dao.RecipeDao
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.dao.ReviewDao
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.administration.Review
 
@@ -12,8 +14,10 @@ import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.administra
     version = 1,
     exportSchema = false
 )
+@TypeConverters(DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun reviewDao(): ReviewDao
+    abstract fun recipeDao(): RecipeDao
 
     companion object {
         @Volatile

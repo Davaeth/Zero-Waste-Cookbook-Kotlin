@@ -1,4 +1,4 @@
-package com.example.davaeth.zero_waste_cookbook_kotlin.database.models.connecting_tables
+package com.example.davaeth.zero_waste_cookbook_kotlin.database.models.connecting_tables.recipe_addons
 
 import androidx.room.Embedded
 import androidx.room.Relation

@@ -1,4 +1,4 @@
-package com.example.davaeth.zero_waste_cookbook_kotlin.database.repositories
+package com.example.davaeth.zero_waste_cookbook_kotlin.repositories
 
 import androidx.lifecycle.LiveData
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.dao.ReviewDao

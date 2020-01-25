@@ -6,14 +6,16 @@ import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "users",
-    foreignKeys = [ForeignKey(
-        entity = Role::class,
-        parentColumns = arrayOf("id"),
-        childColumns = arrayOf("role")
-    )]
+    foreignKeys = [
+        ForeignKey(
+            parentColumns = arrayOf("id"),
+            entity = Role::class,
+            childColumns = arrayOf("roleId")
+        )
+    ]
 )
 data class User(
     @PrimaryKey val id: Int,
     val username: String,
-    val role: Int
+    val roleId: Int
 )

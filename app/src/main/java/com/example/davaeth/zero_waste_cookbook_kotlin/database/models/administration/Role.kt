@@ -4,4 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "roles")
-data class Role(@PrimaryKey val id: Int, val roleName: String)
+data class Role(
+    @PrimaryKey val id: Int,
+    val roleName: String
+)
