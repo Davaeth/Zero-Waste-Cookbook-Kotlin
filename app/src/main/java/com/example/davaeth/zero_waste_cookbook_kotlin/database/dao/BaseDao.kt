@@ -6,10 +6,10 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 
 @Dao
-interface BaseDao<T> {
+interface BaseDao<TEntity> {
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    fun insert(entity: T)
+    fun insert(entity: TEntity)
 
     @Delete
-    fun delete(review: T)
+    fun delete(review: TEntity)
 }

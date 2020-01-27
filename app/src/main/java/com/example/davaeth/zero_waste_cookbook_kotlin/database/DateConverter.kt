@@ -5,17 +5,15 @@ import java.util.*
 
 class DateConverter {
 
-    companion object {
-        @TypeConverter
-        fun toDate(dateLong: Long?): Date? {
-            return if (dateLong == null) {
-                null;
-            } else {
-                Date(dateLong)
-            }
+    @TypeConverter
+    fun toDate(dateLong: Long?): Date? {
+        return if (dateLong == null) {
+            null;
+        } else {
+            Date(dateLong)
         }
-
-        @TypeConverter
-        fun toLong(date: Date?): Long? = date?.time
     }
+
+    @TypeConverter
+    fun toLong(date: Date?): Long? = date?.time
 }

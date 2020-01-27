@@ -8,10 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.davaeth.zero_waste_cookbook_kotlin.R
-import com.example.davaeth.zero_waste_cookbook_kotlin.utils.adapters.RecipesListAdapter
-import kotlinx.android.synthetic.main.fragment_profile_page.*
 
 
 class ProfilePage : Fragment() {
@@ -35,11 +32,11 @@ class ProfilePage : Fragment() {
         list.add("elo4")
         list.add("elo5")
 
-        favourite_recipes.layoutManager = LinearLayoutManager(view.context)
-        favourite_recipes.adapter =
-            RecipesListAdapter(
-                list
-            )
-        favourite_recipes.setHasFixedSize(true)
+        // favourite_recipes.layoutManager = LinearLayoutManager(view.context)
+        // favourite_recipes.adapter =
+        //     RecipesListAdapter(
+        //         list
+        //     )
+        // favourite_recipes.setHasFixedSize(true)
     }
 }

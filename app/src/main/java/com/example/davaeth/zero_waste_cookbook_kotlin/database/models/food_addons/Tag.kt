@@ -1,22 +1,11 @@
 package com.example.davaeth.zero_waste_cookbook_kotlin.database.models.food_addons
 
 import androidx.room.Entity
-import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.food.Recipe
 
-@Entity(
-    tableName = "tags",
-    foreignKeys = [
-        ForeignKey(
-            parentColumns = ["id"],
-            entity = Recipe::class,
-            childColumns = ["recipe"]
-        )
-    ]
-)
+@Entity(tableName = "tags")
 data class Tag(
     @PrimaryKey val id: Int,
     val name: String,
-    val recipe: Int
+    val recipeId: Int
 )

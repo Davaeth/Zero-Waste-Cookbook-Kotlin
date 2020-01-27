@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.recipe_card.view.*
 class HomePage : Fragment() {
 
     private lateinit var navController: NavController
-    private val list = mutableListOf<String>()
 
     private lateinit var homePageViewModel: HomePageViewModel
 
@@ -35,26 +34,20 @@ class HomePage : Fragment() {
         navController = Navigation.findNavController(view)
 
         homePageViewModel = ViewModelProvider(this).get(HomePageViewModel::class.java)
-        // homePageViewModel.allReviews.observe(this, Observer { reviews ->
-        //
-        // })
 
         initAdapters(view)
     }
 
     private fun initAdapters(view: View) {
-        list.add("elo")
-        list.add("elo2")
-        list.add("elo4")
-        list.add("elo5")
-
-        recipe_card.tag_list.adapter = RecipeCardTagsAdapter(view.context, list)
+        recipe_card.tag_list.adapter =
+            RecipeCardTagsAdapter(view.context, homePageViewModel.getRecipeTags())
 
         newest_recipes.layoutManager =
             LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
         newest_recipes.adapter =
             RecipesListAdapter(
-                list
+                homePageViewModel.getRecipeTags(),
+                homePageViewModel.newestRecipes
             )
         newest_recipes.setHasFixedSize(true)
     }
