@@ -1,6 +1,0 @@
-package com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interaces.administration
-
-import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.administration.Review
-import com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interaces.BaseRepository
-
-interface ReviewRepository: BaseRepository<Review>

@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.davaeth.zero_waste_cookbook_kotlin.R
 import com.example.davaeth.zero_waste_cookbook_kotlin.utils.adapters.RecipeCardTagsAdapter
 import com.example.davaeth.zero_waste_cookbook_kotlin.utils.adapters.RecipesListAdapter
-import com.example.davaeth.zero_waste_cookbook_kotlin.view_models.home_page.HomePageViewModel
 import kotlinx.android.synthetic.main.fragment_home_page.*
 import kotlinx.android.synthetic.main.recipe_card.view.*
 
@@ -47,7 +46,7 @@ class HomePage : Fragment() {
         newest_recipes.adapter =
             RecipesListAdapter(
                 homePageViewModel.getRecipeTags(),
-                homePageViewModel.newestRecipes
+                homePageViewModel.newestRecipes.value!!
             )
         newest_recipes.setHasFixedSize(true)
     }

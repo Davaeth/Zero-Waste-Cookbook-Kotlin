@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_profilePage_to_singleRecipePage"
             app:destination="@id/singleRecipePage" />
+        <action
+            android:id="@+id/action_profilePage_to_settingsPage"
+            app:destination="@id/settingsPage" />
     </fragment>
     <fragment
         android:id="@+id/searchPage"
@@ -38,4 +41,9 @@
         android:name="com.example.davaeth.zero_waste_cookbook_kotlin.ui.single_recipe_page.SingleRecipePage"
         android:label="fragment_single_recipe_page"
         tools:layout="@layout/fragment_single_recipe_page" />
+    <fragment
+        android:id="@+id/settingsPage"
+        android:name="com.example.davaeth.zero_waste_cookbook_kotlin.ui.settings_page.SettingsPage"
+        android:label="fragment_settings_page"
+        tools:layout="@layout/fragment_settings_page" />
 </navigation>

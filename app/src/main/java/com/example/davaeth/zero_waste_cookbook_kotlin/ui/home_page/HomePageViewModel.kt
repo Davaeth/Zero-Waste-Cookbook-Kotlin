@@ -1,32 +1,28 @@
-package com.example.davaeth.zero_waste_cookbook_kotlin.view_models.home_page
+package com.example.davaeth.zero_waste_cookbook_kotlin.ui.home_page
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.food.Recipe
-import com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interaces.connecting_tables.RecipeTagsRepository
-import com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interaces.food.RecipeRepository
-import org.kodein.di.Kodein
-import org.kodein.di.KodeinAware
+import com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interfaces.connecting_tables.RecipeTagsRepository
+import com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interfaces.food.RecipeRepository
+import org.kodein.di.conf.KodeinGlobalAware
 import org.kodein.di.direct
 import org.kodein.di.generic.instance
 import java.util.*
 
 class HomePageViewModel(
-    application: Application,
-    private var recipeRepository: RecipeRepository,
-    private var recipeTagsRepository: RecipeTagsRepository
-) : AndroidViewModel(application), KodeinAware {
+    application: Application
+) : AndroidViewModel(application), KodeinGlobalAware {
 
     val newestRecipes: MutableLiveData<List<Recipe>>
 
-    override val kodein: Kodein
+    private val recipeRepository: RecipeRepository
+    private val recipeTagsRepository: RecipeTagsRepository
 
     init {
-        kodein = HomePageInjector().kodein
-
-        recipeTagsRepository = kodein.direct.instance()
         recipeRepository = kodein.direct.instance()
+        recipeTagsRepository = kodein.direct.instance()
 
         val newestRecipeValues: MutableList<Recipe> = mutableListOf()
 

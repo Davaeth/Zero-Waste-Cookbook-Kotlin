@@ -6,6 +6,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.davaeth.zero_waste_cookbook_kotlin.utils.DependencyInjector
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        DependencyInjector.injectDependencies(this)
 
         val navController = findNavController(R.id.nav_host_fragment)
 
@@ -27,5 +30,4 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
     }
-
 }

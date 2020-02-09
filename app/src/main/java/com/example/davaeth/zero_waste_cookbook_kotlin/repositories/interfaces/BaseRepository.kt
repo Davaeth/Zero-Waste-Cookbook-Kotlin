@@ -1,4 +1,4 @@
-package com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interaces
+package com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interfaces
 
 import androidx.lifecycle.LiveData
 

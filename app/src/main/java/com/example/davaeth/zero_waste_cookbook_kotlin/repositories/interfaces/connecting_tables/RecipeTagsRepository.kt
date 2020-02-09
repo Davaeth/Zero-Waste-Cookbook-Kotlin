@@ -1,4 +1,4 @@
-package com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interaces.connecting_tables
+package com.example.davaeth.zero_waste_cookbook_kotlin.repositories.interfaces.connecting_tables
 
 import androidx.lifecycle.LiveData
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.connecting_tables.RecipeTags

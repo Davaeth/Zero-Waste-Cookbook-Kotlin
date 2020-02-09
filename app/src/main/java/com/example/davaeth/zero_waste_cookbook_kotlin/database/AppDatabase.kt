@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.dao.administration.ReviewDao
+import com.example.davaeth.zero_waste_cookbook_kotlin.database.dao.administration.UserDao
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.dao.connecting_tables.DifficultyLevelRecipesDao
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.dao.connecting_tables.RecipeTagsDao
 import com.example.davaeth.zero_waste_cookbook_kotlin.database.dao.connecting_tables.UserOwnRecipesDao
@@ -45,6 +46,7 @@ import com.example.davaeth.zero_waste_cookbook_kotlin.database.models.food_addon
 abstract class AppDatabase : RoomDatabase() {
     // Administration
     abstract fun reviewDao(): ReviewDao
+    abstract fun userDao(): UserDao
 
     // Food
     abstract fun recipeDao(): RecipeDao
